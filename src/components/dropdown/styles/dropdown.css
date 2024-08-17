@@ -1,0 +1,102 @@
+.dropdown-main-container{
+    position: relative;
+    height: 50px;
+    width: 40vw;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+.weather-dropdown-selector-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+.dropdown-container-layover{
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(15px);
+
+    >.dropdown-container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 60vh;
+        width: 40vw;
+        border-radius: 25px;
+        background-color: #223130;
+        z-index: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.dropdown-container{
+    > input{
+        width: 99%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        text-align: center;
+        font-size: 20px;
+        background-color: #34504D;
+        color: white;
+    }
+
+    > input:focus{
+        outline: none;
+    }
+}
+
+.city-name-container{
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+    overflow: scroll;
+}
+
+.city-name{
+    min-height: 30px;
+    background-color: #34504D;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-name:hover{
+    background-color: #172423;
+}
+
+@media only screen and (max-width: 430px){
+    .dropdown-main-container{
+        width: 90vw;
+    }
+
+    .dropdown-container-layover{
+        width: 100vw;
+
+        >.dropdown-container{
+            width: 90vw;
+            height: 70vh;
+        }
+    }
+}
